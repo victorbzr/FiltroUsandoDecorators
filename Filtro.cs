@@ -18,16 +18,16 @@ namespace FiltroDecorator
         {
             OutroFiltro = filtro;
         }
-        public abstract HashSet<Conta> Filtra(HashSet<Conta> contas);
+        public abstract IList<Conta> Filtra(IList<Conta> contas);
 
-        public HashSet<Conta> FiltraOutro(HashSet<Conta> contas)
+        public IList<Conta> FiltraOutro(IList<Conta> contas)
         {
             if (OutroFiltro == null)
-                return new HashSet<Conta>();
+                return new List<Conta>();
             return OutroFiltro.Filtra(contas);
         }
 
-        public static string ListaFiltradaToString(HashSet<Conta> lista)
+        public static string ListaFiltradaToString(IList<Conta> lista)
         {
             StringBuilder builder = new StringBuilder();
             builder.AppendLine("########################");

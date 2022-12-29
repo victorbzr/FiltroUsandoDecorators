@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,10 @@ namespace FiltroDecorator
     {
         public FiltroSaldoMenorQueCemReais() { }
         public FiltroSaldoMenorQueCemReais(Filtro OutroFiltro) : base(OutroFiltro) { }
-        public override HashSet<Conta> Filtra(HashSet<Conta> contas)
+        public override IList<Conta> Filtra(IList<Conta> contas)
         {
-            return contas.Where(x => x.Saldo < 100).ToHashSet();
+            IEnumerable<Conta> lista = contas.Where(x => x.Saldo < 100);
+            return lista.Concat(FiltraOutro(contas)).ToHashSet().ToList();
         }
     }
 }

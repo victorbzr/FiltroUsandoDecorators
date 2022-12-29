@@ -10,10 +10,10 @@ namespace FiltroDecorator
     {
         public FiltroDataDeAberturaMesCorrente() { }
         public FiltroDataDeAberturaMesCorrente(Filtro OutroFiltro) : base(OutroFiltro) { }
-        public override HashSet<Conta> Filtra(HashSet<Conta> contas)
+        public override IList<Conta> Filtra(IList<Conta> contas)
         {
             IEnumerable<Conta> lista = contas.Where(x => x.DataDeAbertura.Month.Equals(DateTime.Now.Month));
-            return lista.Concat(FiltraOutro(contas)).ToHashSet();
+            return lista.Concat(FiltraOutro(contas)).ToHashSet().ToList();
         }
     }
 }
