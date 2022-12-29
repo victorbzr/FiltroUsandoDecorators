@@ -12,7 +12,8 @@ namespace FiltroDecorator
         public FiltroDataDeAberturaMesCorrente(Filtro OutroFiltro) : base(OutroFiltro) { }
         public override IList<Conta> Filtra(IList<Conta> contas)
         {
-            IEnumerable<Conta> lista = contas.Where(x => x.DataDeAbertura.Month.Equals(DateTime.Now.Month));
+            IEnumerable<Conta> lista = contas.Where(x => x.DataDeAbertura.Month.Equals(DateTime.Now.Month)
+            && x.DataDeAbertura.Year.Equals(DateTime.Now.Year));
             return lista.Concat(FiltraOutro(contas)).ToHashSet().ToList();
         }
     }

@@ -14,7 +14,7 @@ namespace FiltroDecorator
             Conta conta = new Conta(99, "Victor", new DateOnly(2022,11,23));
             Conta conta1 = new Conta(98.0, "Andre", new DateOnly(2022,12,23));
             Conta conta2 = new Conta(501000, "Jose", new DateOnly(2022, 12, 23));
-            Conta conta3 = new Conta(97, "Janaina", new DateOnly(2022, 09, 20));
+            Conta conta3 = new Conta(97, "Janaina", new DateOnly(2021, 12, 20));
             Conta conta4 = new Conta(150, "bruna", new DateOnly(2022, 09, 20));
             IList<Conta> contas = new List<Conta>();
             contas.Add(conta);
