@@ -1,5 +1,5 @@
 # FiltroUsandoDecorators
-Projeto de estudo de decorators
+Projeto de estudo de decorators em C#
 
 ## Utilizar de decorators pra filtrar um conjunto de contas bancárias para análise em função dos filtros individuais:
 
